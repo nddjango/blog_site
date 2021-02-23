@@ -1,0 +1,617 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+<head>
+    <style>
+        .aa {
+            color: rgb(226, 19, 19);
+            font-size: 21px;
+            font-family: algerian;
+            height: 63px;
+            width: 63px;
+            float: right;
+            padding: 2px;
+            border-radius: 60px;
+            ;
+        }
+        
+        .aa:hover {
+            border: 2px solid rgb(251, 104, 6);
+        }
+        
+        .aa1 {
+            color: rgb(14, 10, 9);
+            font-size: 21px;
+            font-family: algerian;
+        }
+        
+        .about {
+            font-size: 25px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+    <meta charset="utf-8">
+    <title>Flexor Bootstrap Theme</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
+    <meta property="og:title" content="">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:description" content="">
+
+    <!-- Twitter Cards integration: https://dev.twitter.com/cards/  -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="">
+
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="{% static 'img/icons/favicon.png'%}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'img/icons/114x114.png'%}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'img/icons/72x72.png'%}">
+    <link rel="apple-touch-icon-precomposed" href="{% static 'img/icons/default.png'%}">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900" rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link href="{% static 'lib/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="{% static 'lib/font-awesome/css/font-awesome.min.css'%}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/owl.carousel.min.css'%}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/owl.theme.min.css'%}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/owl.transitions.min.css'%}" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="{% static 'css/style.css'%}" rel="stylesheet">
+
+    <!--Your custom colour override - predefined colours are: colour-blue.css, colour-green.css, colour-lavander.css, orange is default-->
+    <link href="#" id="colour-scheme" rel="stylesheet">
+
+    <!-- =======================================================
+    Theme Name: Flexor
+    Theme URL: https://bootstrapmade.com/flexor-free-multipurpose-bootstrap-template/
+    Author: BootstrapMade.com
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+</head>
+
+<body class="page-index has-hero">
+    <!--Change the background class to alter background image, options are: benches, boots, buildings, city, metro -->
+    <div id="background-wrapper" class="buildings" data-stellar-background-ratio="0.1">
+
+        <!-- ======== @Region: #navigation ======== -->
+        <div id="navigation" class="wrapper">
+            <!--Hidden Header Region-->
+            <div class="header-hidden collapse">
+                <div class="header-hidden-inner container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h3>
+                                About Us
+                            </h3>
+                            <p>Create a beautiful blog that fits your style</p>
+                            <a href="/about" class="btn btn-more"><i class="fa fa-plus"></i> Learn more</a>
+                        </div>
+                        <div class="col-md-3">
+                            <!--@todo: replace with company contact details-->
+                            <h3>
+                                Contact Us
+                            </h3>
+                            <address>
+                                <strong>Nirali Patel
+                                </strong><br>
+                                <abbr title="Address"><i class="fa fa-pushpin"></i></abbr>
+                                Rajkot,Gujarat.
+                                <br>
+                                <abbr title="Phone"><i class="fa fa-phone"></i></abbr>
+                                12345 67890
+                                <br>
+                                <abbr title="Email"><i class="fa fa-envelope-alt"></i></abbr>
+                                test_demo@gmail.com
+                            </address>
+                        </div>
+                        <div class="col-md-6">
+                            <!--Colour & Background Switch for demo - @todo: remove in production-->
+                            <h3>
+                                Theme Variations
+                            </h3>
+                            <div class="switcher">
+                                <div class="cols">
+                                    Backgrounds:
+                                    <br>
+                                    <a href="#benches" class="background benches active" title="Benches">Benches</a> <a href="#boots" class="background boots " title="Boots">Boots</a> <a href="#buildings" class="background buildings " title="Buildings">Buildings</a>
+                                    <a href="#city" class="background city " title="City">City</a> <a href="#metro" class="background metro " title="Metro">Metro</a>
+                                </div>
+
+                            </div>
+                            <p>
+                                <small>Selection is not persistent.</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Header & navbar-branding region-->
+            <div class="header">
+                <div class="header-inner container">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <!--navbar-branding/logo - hidden image tag & site name so things like Facebook to pick up, actual logo set via CSS for flexibility -->
+
+                            <a class="navbar-brand" href="/" title="Home">
+                                <h1 class="hidden">
+                                    <img src="{% static 'img/logo.png'%}" alt="Flexor Logo">
+                                </h1>
+                            </a>
+                        </div>
+                        <!--header rightside-->
+                        <div class="col-md-4">
+                            <!--user menu-->
+                            <ul class="list-inline user-menu pull-right">
+                                <li class="user-button"><a class="btn btn-primary btn-hh-trigger" role="button" data-toggle="collapse" data-target=".header-hidden">Open</a></li>
+                            </ul>
+                            <ul class="list-inline user-menu pull-right">
+                                {% if user is none %}
+                                <li class="user-register" style=" font-weight:bold;"><i class="fa fa-edit text-primary "></i> <a href="register" class="text-uppercase">Register</a></li>
+                                <li class="user-login" style=" font-weight:bold;"><i class="fa fa-sign-in text-primary"></i> <a href="login" class="text-uppercase">login</a></li>
+                                {% else %}
+                                <a href="logout" class="text-uppercase">
+                                    <li class="user-logout" style="font-size:16px; font-weight:bold;"><i class="fa fa-sign-out text-primary"></i> logout </li>
+
+                                </a> {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="navbar navbar-default">
+                    <!--mobile collapse menu button-->
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false"> <span class="sr-only">Toggle
+                            navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span
+                            class="icon-bar"></span> </button>
+                    <!--social media icons-->
+                    {% if user is none%} {%else%}
+                    <a href="view_profile">
+                        <img src={{user}} class="aa">
+                    </a>
+                    {%endif%}
+
+                    <!--everything within this div is collapsed on mobile-->
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav" id="main-menu">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-menu-hamburger"
+                                        style="font-size: 28px; padding-top: 15px;"></i></b></a>
+                                <!-- Dropdown Menu -->
+                                <ul class="dropdown-menu">
+
+                                    {% if user is none%}
+
+                                    <li><a href="login" tabindex="-1" class="menu-item">Sign-In</a></li>
+                                    <li><a href="register" tabindex="-1" class="menu-item">Sign-Up</a></li>
+
+                                    {%else%}
+                                    <li><a href="update_profile" tabindex="-1" class="menu-item">Update_Profile</a></li>
+                                    <li><a href="add_blog" tabindex="-1" class="menu-item">Add Your Blog</a></li>
+                                    <li><a href="view_blog" tabindex="-1" class="menu-item">View All Blog</a></li>
+
+
+                                    {%endif%}
+                                    <li><a href="about" tabindex="-1" class="menu-item">Our Story</a></li>
+                                    <li><a href="contact" tabindex="-1" class="menu-item">Contact Us</a></li>
+                                    <!-- <li><a href="elements" tabindex="-1" class="menu-item">-Up</a></li> -->
+
+                                    {% if user is not none%}
+                                    <li class="dropdown-footer"><a href="logout">SIGN OUT</a></li>
+                                    {%endif%}
+
+                                </ul>
+                            </li>
+                            <!-- <li><a href="#">Menu Link</a></li>
+                            <li class="dropdown dropdown-mm">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mega Menu<b class="caret"></b></a> -->
+                            <!-- Dropdown Menu -->
+                            <!-- <ul class="dropdown-menu dropdown-menu-mm dropdown-menu-persist">
+                                    <li class="row">
+                                        <ul class="col-md-6">
+                                            <li class="dropdown-header">Websites and Apps</li>
+                                            <li><a href="#">Analysis and Planning</a></li>
+                                            <li><a href="#">User Experience / Information Architecture</a></li>
+                                            <li><a href="#">User Interface Design / UI Design</a></li>
+                                            <li><a href="#">Code &amp; Development / Implementation &amp; Support</a></li>
+                                        </ul>
+                                        <ul class="col-md-6">
+                                            <li class="dropdown-header">Enterprise solutions</li>
+                                            <li><a href="#">Business Analysis</a></li>
+                                            <li><a href="#">Custom UX Consulting</a></li>
+                                            <li><a href="#">Quality Assurance</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-footer">
+                                        <div class="row">
+                                            <div class="col-md-7">Like the lite version? <strong>Get the extended version of Flexor.</strong></div>
+                                            <div class="col-md-5">
+                                                <a href="https://bootstrapmade.com" class="btn btn-more btn-lg pull-right"><i class="fa fa-cloud-download"></i> Get It Now</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div> -->
+                            <!--/.navbar-collapse -->
+                    </div>
+                </div>
+            </div>
+            <div class="hero" id="highlighted">
+                <div class="inner">
+                    <!--Slideshow-->
+                    <div id="highlighted-slider" class="container">
+                        <div class="item-slider" data-toggle="owlcarousel" data-owlcarousel-settings='{"singleItem":true, "navigation":true, "transitionStyle":"fadeUp"}'>
+                            <!--Slideshow content-->
+                            <!--Slide 1-->
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-md-6 col-md-push-6 item-caption">
+                                        <h2 class="h1 text-weight-light">
+                                            Welcome to <span class="text-primary">Blog </span>
+                                        </h2>
+                                        <br>
+                                        <h3>
+                                            Create a beautiful blog that fits your style </h3>
+                                        <p>A blank page is also a door. Here you can walk through it. It's easy and free to share your thinking on any topic, connect with an audience, express yourself with a range of publishing tools.
+                                        </p><br>
+                                        <a href="add_blog" class="btn btn-more btn-lg i-right">Share Your Information
+                                            With Us.. <i class="fa fa-pencil-square-o"></i></a>
+                                    </div>
+                                    <div class="col-md-6 col-md-pull-6 hidden-xs">
+                                        <img src="{% static 'img/slides/slide5.jpg'%}" height="440" width="440" alt="Slide 1" class="center-block img-responsive">
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Slide 2-->
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-md-6 text-right-md item-caption">
+                                        <h2 class="h1 text-weight-light">
+                                            Welcome to <span class="text-primary">Blog </span>
+                                        </h2>
+                                        <br>
+                                        <h3>
+                                            Create the space for your thinking to take off. </h3>
+                                        <p>You might be an artist who would like to introduce yourself and your work here or maybe you’re a business with a mission to describe.
+                                        </p><br>
+                                        <a href="view_blog" class="btn btn-more btn-lg"><i class="fa fa-book"></i> Read
+                                            Blogs..</a>
+                                    </div>
+                                    <div class="col-md-6 hidden-xs">
+                                        <img src="{% static 'img/slides/slide2.jpg'%}" alt="Slide 2" class="center-block img-responsive">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ======== @Region: #content ======== -->
+        <div id="content">
+            <!-- Mission Statement -->
+            <div class="mission text-center block block-pd-sm block-bg-noise">
+                <div class="container">
+                    <h2 class="text-shadow-white">
+                        <l class="about">We started this website to share what knowledge we have acquired about the things happening around us and to share our vision for that. so that our users can get benefits of them and be more knowledgeful.
+                        </l>&nbsp;&nbsp;&nbsp;&nbsp; <a href="about" class="btn btn-more" style="font-size: 18px;"><i
+                                class="fa fa-arrow-right"></i>Read more</a>
+                    </h2>
+                </div>
+            </div>
+            <!--Showcase-->
+            <div class="showcase block block-border-bottom-grey">
+                <div class="container">
+                    <h2 class="block-title">
+                        <b>Our Blogs</b>
+                    </h2>
+                    <br>
+                    <div class="item-carousel" data-toggle="owlcarousel" data-owlcarousel-settings='{"items":4, "pagination":false, "navigation":true, "itemsScaleUp":true}'>
+                        {% for b_data in blog_data%}
+                        <div class="item">
+                            <a class="overlay-wrapper">
+                                <div style="height:150px;width:280px">
+                                    <img src="{{b_data.image.url}}" class="img-responsive underlay">
+                                </div>
+                                <span class="overlay">
+
+                                    <span class="overlay-content"> <span class="h4"><i class="fa fa-user"
+                                                style=" color: rgb(253, 107, 9)"></i> &nbsp; <m
+                                                style="font-family:algerian">{{b_data.unm}}</m></span> </span>
+                                </span>
+                            </a>
+                            <div class="item-details bg-noise">
+                                <h4 class="item-title">
+                                    <a href="view_p_blog/{{b_data.id}}"><i
+                                            class="fa fa-star-o"></i>&nbsp;&nbsp;{{b_data.title}}</a>
+                                </h4>
+                                <a href="view_p_blog/{{b_data.id}}" class="btn btn-more"><i class="fa fa-plus"></i>Read
+                                    more</a>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <!--
+Background image callout with CSS overlay
+Usage: data-block-bg-img="IMAGE-URL" to apply a background image clearly via jQuery .block-bg-overlay = overlays the background image, colour is inherited from block-bg-* classes .block-bg-overlay-NUMBER = determines opcacity value of overlay from 1-9 (default is 5) ie. .block-bg-overlay-2 or .block-bg-overlay-6
+-->
+                <div class="block block-pd-sm block-bg-grey-dark block-bg-overlay block-bg-overlay-6 text-center" data-block-bg-img="https://picjumbo.imgix.net/HNCK1088.jpg?q=40&amp;w=1650&amp;sharp=30" data-stellar-background-ratio="0.3">
+                    <h2 class="h-xlg h1 m-a-0">
+                        <span data-counter-up>105,006,0</span>s
+                    </h2>
+                    <h3 class="h-lg m-t-0 m-b-lg">
+                        Of Happy Customers!
+                    </h3>
+                    <!-- <p>
+                        <a href="#" class="btn btn-more btn-lg i-right">Join them today! <i class="fa fa-angle-right"></i></a>
+                    </p> -->
+                </div>
+                <!--Customer testimonial & Latest Blog posts-->
+                <div class="testimonials block-contained">
+                    <div class="row">
+                        <!--Customer testimonial-->
+                        <div class="col-md-6 m-b-lg">
+                            <h3 class="block-title">
+                                Testimonials
+                            </h3>
+                            <blockquote>
+                                <p><q>We think too much and feel too little. More than machinery, we need humanity; more
+                                        than cleverness, we need kindness and gentleness. Without these qualities, life
+                                        will be violent and all will be lost.</q></p>
+                                <img src="{% static 'img/misc/charles-quote.png'%}" alt="Charles Spencer Chaplin">
+                                <small>
+                                    <strong>Charles Chaplin</strong>
+                                    <br>
+                                    British comic actor
+                                </small>
+                            </blockquote>
+                        </div>
+                        <!--Latest Blog posts-->
+                        <div class="col-md-6 blog-roll">
+                            <h3 class="block-title">
+                                Latest From Our Blog
+                            </h3>
+                            <!-- Blog post 1-->
+                            <div class="media">
+                                <div class="media-left hidden-xs">
+                                    <!-- Date desktop -->
+                                    <div class="date-wrapper"> <span class="date-m">Feb</span> <span class="date-d">01</span> </div>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">
+                                        <a href="#" class="text-weight-strong">amet urna integer urna enim, sit arcu pid
+                                            in nec?</a>
+                                    </h4>
+                                    <!-- Meta details mobile -->
+                                    <ul class="list-inline meta text-muted visible-xs">
+                                        <li><i class="fa fa-calendar"></i> <span class="visible-md">Created:</span> Fri 1st Feb 2013</li>
+                                        <li><i class="fa fa-user"></i> <a href="#">Joe</a></li>
+                                    </ul>
+                                    <p>
+                                        Ut <strong>commodo ullamcorper risus nec</strong> mattis. Morbi tincidunt posuere turpis eu laoreet. Nulla facilisi. Aenean at massa leo. Vestibulum in varius arcu.
+                                        <a href="#">Read more <i class="fa fa-angle-right"></i></a>
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Blog post 2 -->
+                            <div class="media">
+                                <div class="media-left hidden-xs">
+                                    <!-- Date desktop -->
+                                    <div class="date-wrapper"> <span class="date-m">Jan</span> <span class="date-d">17</span> </div>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">
+                                        <a href="#" class="text-weight-strong">a nec in sed hac ultrices cursus</a>
+                                    </h4>
+                                    <!-- Meta details mobile -->
+                                    <ul class="list-inline meta text-muted visible-xs">
+                                        <li><i class="fa fa-calendar"></i> <span class="visible-md">Created:</span> Thu 17th Jan 2013</li>
+                                        <li><i class="fa fa-user"></i> <a href="#">Joe</a></li>
+                                    </ul>
+                                    <p>
+                                        Nam risus magna, fringilla sit amet blandit viverra, dignissim eget est. Aenean at massa leo. Vestibulum in varius arcu.
+                                        <a href="#">Read more <i class="fa fa-angle-right"></i></a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /content -->
+            <!-- Call out block -->
+            <div class="block block-pd-sm block-bg-primary">
+                <div class="container">
+                    <div class="row">
+                        <h3 class="col-md-4">
+                            Some of our Clients
+                        </h3>
+                        <div class="col-md-8">
+                            <div class="row">
+                                <!--Client logos should be within a 120px wide by 60px height image canvas-->
+                                <div class="col-xs-6 col-md-2">
+                                    <a href="https://bootstrapmade.com" title="Client 1">
+                                        <img src="{% static 'img/clients/client1.png'%}" alt="Client 1 logo" class="img-responsive">
+                                    </a>
+                                </div>
+                                <div class="col-xs-6 col-md-2">
+                                    <a href="https://bootstrapmade.com" title="Client 2">
+                                        <img src="{% static 'img/clients/client2.png'%}" alt="Client 2 logo" class="img-responsive">
+                                    </a>
+                                </div>
+                                <div class="col-xs-6 col-md-2">
+                                    <a href="https://bootstrapmade.com" title="Client 3">
+                                        <img src="{% static 'img/clients/client3.png'%}" alt="Client 3 logo" class="img-responsive">
+                                    </a>
+                                </div>
+                                <div class="col-xs-6 col-md-2">
+                                    <a href="https://bootstrapmade.com" title="Client 4">
+                                        <img src="{% static 'img/clients/client4.png'%}" alt="Client 4 logo" class="img-responsive">
+                                    </a>
+                                </div>
+                                <div class="col-xs-6 col-md-2">
+                                    <a href="https://bootstrapmade.com" title="Client 5">
+                                        <img src="{% static 'img/clients/client5.png'%}" alt="Client 5 logo" class="img-responsive">
+                                    </a>
+                                </div>
+                                <div class="col-xs-6 col-md-2">
+                                    <a href="https://bootstrapmade.com" title="Client 6">
+                                        <img src="{% static 'img/clients/client6.png'%}" alt="Client 6 logo" class="img-responsive">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ======== @Region: #footer ======== -->
+            <footer id="footer" class="block block-bg-grey-dark" data-block-bg-img="{% static 'img/bg_footer-map.png'%}" data-stellar-background-ratio="0.4">
+                <div class="container">
+
+                    <div class="row" id="contact">
+
+                        <div class="col-md-3">
+                            <address>
+                                <strong>Nirali Dobariya</strong>
+                                <br>
+                                <i class="fa fa-map-pin fa-fw text-primary"></i> Rajkot,gujarat. INDIA
+                                <br>
+                                <i class="fa fa-phone fa-fw text-primary"></i> 019223 8092344
+                                <br>
+                                <i class="fa fa-envelope-o fa-fw text-primary"></i> ndpraworld@gmail.com
+                                <br>
+                            </address>
+                        </div>
+
+                        <div class="col-md-6">
+                            <h4 class="text-uppercase">
+                                Contact Us
+                            </h4>
+                            <div class="form">
+                                <div id="sendmessage">Your message has been sent. Thank you!</div>
+                                <div id="errormessage"></div>
+                                <form action="" method="post">
+
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <input type="text" name="u_nm" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required />
+                                        <div class="validation"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" name="u_email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" required />
+                                        <div class="validation"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="u_sub" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" required />
+                                        <div class="validation"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control" name="u_msg" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message" required></textarea>
+                                        <div class="validation"></div>
+                                    </div>
+                                    <div class="text-center"><button type="submit">Send Message</button></div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <h4 class="text-uppercase">
+                                Follow Us On:
+                            </h4>
+                            <!--social media icons-->
+                            <div class="social-media social-media-stacked">
+                                <!--@todo: replace with company social media details-->
+                                <a href="https://twitter.com/login?lang=en"><i class="fa fa-twitter fa-fw"></i>
+                                    Twitter</a>
+                                <a href="https://www.facebook.com/login?lang=en"><i class="fa fa-facebook fa-fw"></i>
+                                    Facebook</a>
+                                <a href="https://www.linkedin.com/login?lang=en"><i class="fa fa-linkedin fa-fw"></i>
+                                    LinkedIn</a>
+                                <a href="https://accounts.google.com/ServiceLogin/signinchooser?hl=en&passive=true&continue=https%3A%2F%2Fwww.google.com%2F&ec=GAZAmgQ&flowName=GlifWebSignIn&flowEntry=ServiceLogin"><i
+                                        class="fa fa-google-plus fa-fw"></i> Google+</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row subfooter">
+                        <!--@todo: replace with company copyright details-->
+                        <div class="col-md-7">
+                            <p>Copyright © Flexor Theme</p>
+                            <div class="credits">
+                                <!--
+              All the links in the footer should remain intact.
+              You can delete the links only if you purchased the pro version.
+              Licensing information: https://bootstrapmade.com/license/
+              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Flexor
+            -->
+                                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <ul class="list-inline pull-right">
+                                <li><a href="#">Terms</a></li>
+                                <li><a href="#">Privacy</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <a href="#top" class="scrolltop">Top</a>
+
+                </div>
+            </footer>
+
+            <!-- Required JavaScript Libraries -->
+            <script src="{% static 'lib/jquery/jquery.min.js'%}"></script>
+            <script src="{% static 'lib/bootstrap/js/bootstrap.min.js'%}"></script>
+            <script src="{% static 'lib/owlcarousel/owl.carousel.min.js'%}"></script>
+            <script src="{% static 'lib/stellar/stellar.min.js'%}"></script>
+            <script src="{% static 'lib/waypoints/waypoints.min.js'%}"></script>
+            <script src="{% static 'lib/counterup/counterup.min.js'%}"></script>
+            <script src="{% static 'contactform/contactform.js'%}"></script>
+
+            <!-- Template Specisifc Custom Javascript File -->
+            <script src="{% static 'js/custom.js'%}"></script>
+
+            <!--Custom scripts demo background & colour switcher - OPTIONAL -->
+            <script src="{% static 'js/color-switcher.js'%}"></script>
+
+            <!--Contactform script -->
+            <script src="{% static 'contactform/contactform.js'%}"></script>
+
+</body>
+
+</html>
