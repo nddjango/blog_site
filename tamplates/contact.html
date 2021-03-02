@@ -11,7 +11,16 @@
 <head>
     <style>
         .btnm {
-            background-color: tomato;
+            background-color: rgb(8, 3, 0);
+            border: none;
+            height: 35px;
+            width: 200px;
+            color: #fff;
+            font-size: 17px;
+        }
+        
+        .btnm:hover {
+            background-color: rgb(236, 81, 20);
             border: none;
             height: 35px;
             width: 200px;
@@ -121,7 +130,7 @@
                                 Contact Us
                             </h3>
                             <address>
-                  <strong>Nirali Patel
+                  <strong>N. Patel
                   </strong><br>
                   <abbr title="Address"><i class="fa fa-pushpin"></i></abbr>
                   Rajkot,Gujarat.
@@ -174,10 +183,10 @@
                             </ul>
                             <ul class="list-inline user-menu pull-right">
                                 {% if user is none %}
-                                <li class="user-register" style=" font-weight:bold;"><i class="fa fa-edit text-primary "></i> <a href="register" class="text-uppercase">Register</a></li>
-                                <li class="user-login" style=" font-weight:bold;"><i class="fa fa-sign-in text-primary"></i> <a href="login" class="text-uppercase">login</a></li>
+                                <li class="user-register" style=" font-weight:bold;"><i class="fa fa-edit text-primary "></i> <a href="/register" class="text-uppercase">Register</a></li>
+                                <li class="user-login" style=" font-weight:bold;"><i class="fa fa-sign-in text-primary"></i> <a href="/login" class="text-uppercase">login</a></li>
                                 {% else %}
-                                <a href="logout" class="text-uppercase">
+                                <a href="/logout" class="text-uppercase">
                                     <li class="user-logout" style="font-size:16px; font-weight:bold;"><i class="fa fa-sign-out text-primary"></i> logout </li>
 
                                 </a> {% endif %}
@@ -192,7 +201,7 @@
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
                     <!--social media icons-->
                     {% if user is none%} {%else%}
-                    <a href="view_profile">
+                    <a href="/view_profile">
                         <img src={{user}} class="aa">
                     </a>
                     {%endif%}

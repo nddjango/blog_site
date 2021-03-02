@@ -28,22 +28,25 @@
         
         .unm {
             font-size: 20px;
+            padding-left: 19px;
         }
         
         .title {
             font-size: 30px;
             font-family: algerian;
             padding: 10px;
-            color: tomato
+            color: rgb(1, 0, 2)
         }
         
         .dscr {
             font-size: 20px;
+            padding: 10px;
+            font-family: 'Times New Roman', Times, serif;
         }
         
         .img {
-            width: 350px;
-            height: 250px;
+            width: 300px;
+            height: 200px;
             padding: 10px;
             border-radius: 25px;
         }
@@ -51,6 +54,19 @@
         .tab {
             background-color: rgb(248, 245, 241);
             border-radius: 25px;
+        }
+        
+        .table_f {
+            background: white;
+            border-radius: 12px;
+            width: 600px;
+        }
+        
+        .unm_bg {
+            background: rgb(231, 227, 227);
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            font-size: 19px;
         }
     </style>
     <meta charset="utf-8">
@@ -128,17 +144,17 @@
                                 Contact Us
                             </h3>
                             <address>
-                  <strong>Nirali Patel
-                  </strong><br>
-                  <abbr title="Address"><i class="fa fa-pushpin"></i></abbr>
-                  Rajkot,Gujarat.
-                  <br>
-                  <abbr title="Phone"><i class="fa fa-phone"></i></abbr>
-                  12345 67890
-                  <br>
-                  <abbr title="Email"><i class="fa fa-envelope-alt"></i></abbr>
-                  test_demo@gmail.com
-                </address>
+                                <strong>N. Patel
+                                </strong><br>
+                                <abbr title="Address"><i class="fa fa-pushpin"></i></abbr>
+                                Rajkot,Gujarat.
+                                <br>
+                                <abbr title="Phone"><i class="fa fa-phone"></i></abbr>
+                                12345 67890
+                                <br>
+                                <abbr title="Email"><i class="fa fa-envelope-alt"></i></abbr>
+                                test_demo@gmail.com
+                            </address>
                         </div>
                         <div class="col-md-6">
                             <!--Colour & Background Switch for demo - @todo: remove in production-->
@@ -170,7 +186,8 @@
 
                             <a class="navbar-brand" href="/" title="Home">
                                 <h1 class="hidden">
-                                    <img src="{% static 'img/logo.png'%}" alt="Flexor Logo"> </h1>
+                                    <img src="{% static 'img/logo.png'%}" alt="Flexor Logo">
+                                </h1>
                             </a>
                         </div>
                         <!--header rightside-->
@@ -181,10 +198,10 @@
                             </ul>
                             <ul class="list-inline user-menu pull-right">
                                 {% if user is none %}
-                                <li class="user-register" style=" font-weight:bold;"><i class="fa fa-edit text-primary "></i> <a href="register" class="text-uppercase">Register</a></li>
-                                <li class="user-login" style=" font-weight:bold;"><i class="fa fa-sign-in text-primary"></i> <a href="login" class="text-uppercase">login</a></li>
+                                <li class="user-register" style=" font-weight:bold;"><i class="fa fa-edit text-primary "></i> <a href="/register" class="text-uppercase">Register</a></li>
+                                <li class="user-login" style=" font-weight:bold;"><i class="fa fa-sign-in text-primary"></i> <a href="/login" class="text-uppercase">login</a></li>
                                 {% else %}
-                                <a href="logout" class="text-uppercase">
+                                <a href="/logout" class="text-uppercase">
                                     <li class="user-logout" style="font-size:16px; font-weight:bold;"><i class="fa fa-sign-out text-primary"></i> logout </li>
 
                                 </a> {% endif %}
@@ -196,10 +213,12 @@
             <div class="container">
                 <div class="navbar navbar-default">
                     <!--mobile collapse menu button-->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false"> <span class="sr-only">Toggle
+                            navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span
+                            class="icon-bar"></span> </button>
                     <!--social media icons-->
                     {% if user is none%} {%else%}
-                    <a href="view_profile">
+                    <a href="/view_profile">
                         <img src={{user}} class="aa">
                     </a>
                     {%endif%}
@@ -208,7 +227,9 @@
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav" id="main-menu">
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-menu-hamburger" style="font-size: 28px; padding-top: 15px;"></i></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+                                        class="glyphicon glyphicon-menu-hamburger"
+                                        style="font-size: 28px; padding-top: 15px;"></i></a>
                                 <!-- Dropdown Menu -->
                                 <ul class="dropdown-menu">
                                     <li><a href="/" tabindex="-1" class="menu-item" style="color:tomato;">Home</a></li>
@@ -218,7 +239,8 @@
                                     <li><a href="/register" tabindex="-1" class="menu-item">Sign-Up</a></li>
 
                                     {%else%}
-                                    <li><a href="/update_profile" tabindex="-1" class="menu-item">Update_Profile</a></li>
+                                    <li><a href="/update_profile" tabindex="-1" class="menu-item">Update_Profile</a>
+                                    </li>
                                     <li><a href="/add_blog" tabindex="-1" class="menu-item">Add Your Blog</a></li>
                                     <li><a href="/view_blog" tabindex="-1" class="menu-item">View All Blog</a></li>
 
@@ -228,246 +250,221 @@
                                     <li><a href="/contact" tabindex="-1" class="menu-item">Contact Us</a></li>
                                     {% if user is not none%}
                                     <li class="dropdown-footer"><a href="/logout">SIGN OUT</a></li>
-                                    {%endif%} </ul>
-                            </li>
-                            <!-- <li><a href="#">Menu Link</a></li>
-                            <li class="dropdown dropdown-mm">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mega Menu<b class="caret"></b></a> -->
-                            <!-- Dropdown Menu -->
-                            <!-- <ul class="dropdown-menu dropdown-menu-mm dropdown-menu-persist">
-                                    <li class="row">
-                                        <ul class="col-md-6">
-                                            <li class="dropdown-header">Websites and Apps</li>
-                                            <li><a href="#">Analysis and Planning</a></li>
-                                            <li><a href="#">User Experience / Information Architecture</a></li>
-                                            <li><a href="#">User Interface Design / UI Design</a></li>
-                                            <li><a href="#">Code &amp; Development / Implementation &amp; Support</a></li>
-                                        </ul>
-                                        <ul class="col-md-6">
-                                            <li class="dropdown-header">Enterprise solutions</li>
-                                            <li><a href="#">Business Analysis</a></li>
-                                            <li><a href="#">Custom UX Consulting</a></li>
-                                            <li><a href="#">Quality Assurance</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown-footer">
-                                        <div class="row">
-                                            <div class="col-md-7">Like the lite version? <strong>Get the extended version of Flexor.</strong></div>
-                                            <div class="col-md-5">
-                                                <a href="https://bootstrapmade.com" class="btn btn-more btn-lg pull-right"><i class="fa fa-cloud-download"></i> Get It Now</a>
-                                            </div>
-                                        </div>
-                                    </li>
+                                    {%endif%}
                                 </ul>
                             </li>
-                        </ul>
-                    </div> -->
-                            <!--/.navbar-collapse -->
+
                     </div>
                 </div>
             </div>
 
         </div>
-        <div id="content">
-            <div class="container" id="about">
-                <center>
-                    <div>
-                        <table>
-                            {% for b_data in blog_data %}
+        <br>
+        <br>
+        <div id="background-wrapper" class="benches" data-stellar-background-ratio="0.8">
 
-                            <tr class="tab">
-                                <td>
+            <center>
+                <div>
+
+                    {% for b_data in blog_data %}
+                    <table class="table_f">
+                        <tr>
+                            <td class="unm_bg">
+                                <b class="title">♦ &nbsp;{{b_data.title}}</b>
+                                <m style="float: right; padding-right:18px; padding-top: 10px;">
+                                    <b><i class="fa fa-thumbs-o-up"></i>0</b>&nbsp;
+                                    <b><i class="fa fa-thumbs-o-down"></i>0</b>&nbsp;
+                                    <b><i class="fa fa-commenting-o"></i>0</b>
+                                </m>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <center>
                                     <img src="{{b_data.image.url}}" class="img">
+                                </center>
+                            </td>
+                        </tr>
+                        <tr>
 
-                                </td>
-                                <td>&nbsp; &nbsp; &nbsp; &nbsp;
-                                </td>
-                                <td>
-                                    <table width="100%" height="100%">
-                                        <tr>
-                                            <td>
-                                                <t class="title">✤ &nbsp;{{b_data.title}}</t>
-                                                <t class="unm">♦ {{b_data.unm}}</t><br><br>
+                            <td class="dscr">
+                                <center>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;✍&nbsp; {{b_data.dscr}}
+                                </center>
+                            </td>
 
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="dscr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;✍&nbsp; {{b_data.dscr}}</td>
-                                        </tr>
-                                    </table>
-
-                                </td>
-                            </tr>
-
-                            {% endfor %}
-
-                        </table>
-
-                    </div>
-                </center>
-            </div>
+                        </tr>
+                    </table>
+                    <br> {% endfor %}
+                </div>
+            </center>
         </div>
 
-        <!-- Call out block -->
+    </div>
 
-        <!-- /content -->
-        <!-- Call out block -->
-        <div class="block block-pd-sm block-bg-primary">
-            <div class="container">
-                <div class="row">
-                    <h3 class="col-md-4">
-                        Some of our Clients
-                    </h3>
-                    <div class="col-md-8">
-                        <div class="row">
-                            <!--Client logos should be within a 120px wide by 60px height image canvas-->
-                            <div class="col-xs-6 col-md-2">
-                                <a href="https://bootstrapmade.com" title="Client 1">
-                                    <img src="{% static 'img/clients/client1.png'%}" alt="Client 1 logo" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="col-xs-6 col-md-2">
-                                <a href="https://bootstrapmade.com" title="Client 2">
-                                    <img src="{% static 'img/clients/client2.png'%}" alt="Client 2 logo" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="col-xs-6 col-md-2">
-                                <a href="https://bootstrapmade.com" title="Client 3">
-                                    <img src="{% static 'img/clients/client3.png'%}" alt="Client 3 logo" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="col-xs-6 col-md-2">
-                                <a href="https://bootstrapmade.com" title="Client 4">
-                                    <img src="{% static 'img/clients/client4.png'%}" alt="Client 4 logo" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="col-xs-6 col-md-2">
-                                <a href="https://bootstrapmade.com" title="Client 5">
-                                    <img src="{% static 'img/clients/client5.png'%}" alt="Client 5 logo" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="col-xs-6 col-md-2">
-                                <a href="https://bootstrapmade.com" title="Client 6">
-                                    <img src="{% static 'img/clients/client6.png'%}" alt="Client 6 logo" class="img-responsive">
-                                </a>
-                            </div>
+    <!-- Call out block -->
+
+    <!-- /content -->
+    <!-- Call out block -->
+    <div class="block block-pd-sm block-bg-primary">
+        <div class="container">
+            <div class="row">
+                <h3 class="col-md-4">
+                    Some of our Clients
+                </h3>
+                <div class="col-md-8">
+                    <div class="row">
+                        <!--Client logos should be within a 120px wide by 60px height image canvas-->
+                        <div class="col-xs-6 col-md-2">
+                            <a href="https://bootstrapmade.com" title="Client 1">
+                                <img src="{% static 'img/clients/client1.png'%}" alt="Client 1 logo" class="img-responsive">
+                            </a>
+                        </div>
+                        <div class="col-xs-6 col-md-2">
+                            <a href="https://bootstrapmade.com" title="Client 2">
+                                <img src="{% static 'img/clients/client2.png'%}" alt="Client 2 logo" class="img-responsive">
+                            </a>
+                        </div>
+                        <div class="col-xs-6 col-md-2">
+                            <a href="https://bootstrapmade.com" title="Client 3">
+                                <img src="{% static 'img/clients/client3.png'%}" alt="Client 3 logo" class="img-responsive">
+                            </a>
+                        </div>
+                        <div class="col-xs-6 col-md-2">
+                            <a href="https://bootstrapmade.com" title="Client 4">
+                                <img src="{% static 'img/clients/client4.png'%}" alt="Client 4 logo" class="img-responsive">
+                            </a>
+                        </div>
+                        <div class="col-xs-6 col-md-2">
+                            <a href="https://bootstrapmade.com" title="Client 5">
+                                <img src="{% static 'img/clients/client5.png'%}" alt="Client 5 logo" class="img-responsive">
+                            </a>
+                        </div>
+                        <div class="col-xs-6 col-md-2">
+                            <a href="https://bootstrapmade.com" title="Client 6">
+                                <img src="{% static 'img/clients/client6.png'%}" alt="Client 6 logo" class="img-responsive">
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- ======== @Region: #footer ======== -->
-        <footer id="footer" class="block block-bg-grey-dark" data-block-bg-img="{% static 'img/bg_footer-map.png'%}" data-stellar-background-ratio="0.4">
-            <div class="container">
+    <!-- ======== @Region: #footer ======== -->
+    <footer id="footer" class="block block-bg-grey-dark" data-block-bg-img="{% static 'img/bg_footer-map.png'%}" data-stellar-background-ratio="0.4">
+        <div class="container">
 
-                <div class="row" id="contact">
+            <div class="row" id="contact">
 
-                    <div class="col-md-3">
-                        <address>
-              <strong>Nirali Dobariya</strong>
-              <br>
-              <i class="fa fa-map-pin fa-fw text-primary"></i> Rajkot,gujarat. INDIA
-              <br>
-              <i class="fa fa-phone fa-fw text-primary"></i> 019223 8092344
-              <br>
-              <i class="fa fa-envelope-o fa-fw text-primary"></i> ndpraworld@gmail.com
-              <br>
-            </address>
-                    </div>
-
-                    <div class="col-md-6">
-                        <h4 class="text-uppercase">
-                            Contact Us
-                        </h4>
-                        <div class="form">
-                            <div id="sendmessage">Your message has been sent. Thank you!</div>
-                            <div id="errormessage"></div>
-                            <form action="" method="post">
-
-                                {% csrf_token %}
-                                <div class="form-group">
-                                    <input type="text" name="u_nm" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required />
-                                    <div class="validation"></div>
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control" name="u_email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" required />
-                                    <div class="validation"></div>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="u_sub" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" required />
-                                    <div class="validation"></div>
-                                </div>
-                                <div class="form-group">
-                                    <textarea class="form-control" name="u_msg" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message" required></textarea>
-                                    <div class="validation"></div>
-                                </div>
-                                <div class="text-center"><button type="submit">Send Message</button></div>
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <h4 class="text-uppercase">
-                            Follow Us On:
-                        </h4>
-                        <!--social media icons-->
-                        <div class="social-media social-media-stacked">
-                            <!--@todo: replace with company social media details-->
-                            <a href="https://twitter.com/login?lang=en"><i class="fa fa-twitter fa-fw"></i> Twitter</a>
-                            <a href="https://www.facebook.com/login?lang=en"><i class="fa fa-facebook fa-fw"></i> Facebook</a>
-                            <a href="https://www.linkedin.com/login?lang=en"><i class="fa fa-linkedin fa-fw"></i> LinkedIn</a>
-                            <a href="https://accounts.google.com/ServiceLogin/signinchooser?hl=en&passive=true&continue=https%3A%2F%2Fwww.google.com%2F&ec=GAZAmgQ&flowName=GlifWebSignIn&flowEntry=ServiceLogin"><i class="fa fa-google-plus fa-fw"></i> Google+</a>
-                        </div>
-                    </div>
-
+                <div class="col-md-3">
+                    <address>
+                            <strong>N. Patel</strong>
+                            <br>
+                            <i class="fa fa-map-pin fa-fw text-primary"></i> Rajkot,gujarat. INDIA
+                            <br>
+                            <i class="fa fa-phone fa-fw text-primary"></i> 019223 8092344
+                            <br>
+                            <i class="fa fa-envelope-o fa-fw text-primary"></i> ndpraworld@gmail.com
+                            <br>
+                        </address>
                 </div>
 
-                <div class="row subfooter">
-                    <!--@todo: replace with company copyright details-->
-                    <div class="col-md-7">
-                        <p>Copyright © Flexor Theme</p>
-                        <div class="credits">
-                            <!--
+                <div class="col-md-6">
+                    <h4 class="text-uppercase">
+                        Contact Us
+                    </h4>
+                    <div class="form">
+                        <div id="sendmessage">Your message has been sent. Thank you!</div>
+                        <div id="errormessage"></div>
+                        <form action="" method="post">
+
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <input type="text" name="u_nm" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required />
+                                <div class="validation"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" name="u_email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" required />
+                                <div class="validation"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="u_sub" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" required />
+                                <div class="validation"></div>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" name="u_msg" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message" required></textarea>
+                                <div class="validation"></div>
+                            </div>
+                            <div class="text-center"><button type="submit">Send Message</button></div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <h4 class="text-uppercase">
+                        Follow Us On:
+                    </h4>
+                    <!--social media icons-->
+                    <div class="social-media social-media-stacked">
+                        <!--@todo: replace with company social media details-->
+                        <a href="https://twitter.com/login?lang=en"><i class="fa fa-twitter fa-fw"></i> Twitter</a>
+                        <a href="https://www.facebook.com/login?lang=en"><i class="fa fa-facebook fa-fw"></i>
+                                Facebook</a>
+                        <a href="https://www.linkedin.com/login?lang=en"><i class="fa fa-linkedin fa-fw"></i>
+                                LinkedIn</a>
+                        <a href="https://accounts.google.com/ServiceLogin/signinchooser?hl=en&passive=true&continue=https%3A%2F%2Fwww.google.com%2F&ec=GAZAmgQ&flowName=GlifWebSignIn&flowEntry=ServiceLogin"><i
+                                    class="fa fa-google-plus fa-fw"></i> Google+</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row subfooter">
+                <!--@todo: replace with company copyright details-->
+                <div class="col-md-7">
+                    <p>Copyright © Flexor Theme</p>
+                    <div class="credits">
+                        <!--
               All the links in the footer should remain intact.
               You can delete the links only if you purchased the pro version.
               Licensing information: https://bootstrapmade.com/license/
               Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Flexor
             -->
-                            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-                        </div>
-                    </div>
-                    <div class="col-md-5">
-                        <ul class="list-inline pull-right">
-                            <li><a href="#">Terms</a></li>
-                            <li><a href="#">Privacy</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                        </ul>
+                        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
                     </div>
                 </div>
-
-                <a href="#top" class="scrolltop">Top</a>
-
+                <div class="col-md-5">
+                    <ul class="list-inline pull-right">
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
             </div>
-        </footer>
 
-        <!-- Required JavaScript Libraries -->
-        <script src="{% static 'lib/jquery/jquery.min.js'%}"></script>
-        <script src="{% static 'lib/bootstrap/js/bootstrap.min.js'%}"></script>
-        <script src="{% static 'lib/owlcarousel/owl.carousel.min.js'%}"></script>
-        <script src="{% static 'lib/stellar/stellar.min.js'%}"></script>
-        <script src="{% static 'lib/waypoints/waypoints.min.js'%}"></script>
-        <script src="{% static 'lib/counterup/counterup.min.js'%}"></script>
-        <script src="{% static 'contactform/contactform.js'%}"></script>
+            <a href="#top" class="scrolltop">Top</a>
 
-        <!-- Template Specisifc Custom Javascript File -->
-        <script src="{% static 'js/custom.js'%}"></script>
+        </div>
+    </footer>
 
-        <!--Custom scripts demo background & colour switcher - OPTIONAL -->
-        <script src="{% static 'js/color-switcher.js'%}"></script>
+    <!-- Required JavaScript Libraries -->
+    <script src="{% static 'lib/jquery/jquery.min.js'%}"></script>
+    <script src="{% static 'lib/bootstrap/js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'lib/stellar/stellar.min.js'%}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js'%}"></script>
+    <script src="{% static 'lib/counterup/counterup.min.js'%}"></script>
+    <script src="{% static 'contactform/contactform.js'%}"></script>
 
-        <!--Contactform script -->
-        <script src="{% static 'contactform/contactform.js'%}"></script>
+    <!-- Template Specisifc Custom Javascript File -->
+    <script src="{% static 'js/custom.js'%}"></script>
+
+    <!--Custom scripts demo background & colour switcher - OPTIONAL -->
+    <script src="{% static 'js/color-switcher.js'%}"></script>
+
+    <!--Contactform script -->
+    <script src="{% static 'contactform/contactform.js'%}"></script>
 
 </body>
 

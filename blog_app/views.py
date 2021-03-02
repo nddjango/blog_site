@@ -60,6 +60,7 @@ def login(request):
             return redirect('/')
         else:
             print("not matched Login credintials")
+            return redirect('/login')
 
     else:
         print("Login failed................")        
@@ -78,22 +79,25 @@ def logout(request):
         return redirect('/login')
 
 def add_blog(request):
-    user=request.session.get('unm')
-    if request.method=='POST':
-        b_frm=blogform(request.POST,request.FILES)
+    if request.session.has_key('dp'):
+        user=request.session.get('unm')
+        if request.method=='POST':
+            b_frm=blogform(request.POST,request.FILES)
 
-        if b_frm.is_valid:
-            b_frm.save()
-            print("blog inserted ")
-            return redirect("/")
-        else:
-            print("blog not inserted ")
-            print(b_frm.errors)
+            if b_frm.is_valid:
+                b_frm.save()
+                print("blog inserted ")
+                return redirect("/")
+            else:
+                print("blog not inserted ")
+                print(b_frm.errors)
     
-    else:
-        b_frm=blogform()
+        else:
+            b_frm=blogform()
 
-    return render(request,"add_blog.html",{'user':user,'b_frm':b_frm})
+        return render(request,"add_blog.html",{'user':user,'b_frm':b_frm})
+    else:
+        return redirect("/login")
 
 def ans_msg(request):
     return render(request,"ans_msg.html")
@@ -114,7 +118,6 @@ def about(request):
         c_frm=contactform()
     return render(request,"about.html",{'user':user,'c_frm':c_frm})
 
-
 def contact(request):
     user=request.session.get('dp')
 
@@ -131,8 +134,6 @@ def contact(request):
         print("method is not post")
         c_frm=contactform()
     return render(request,"contact.html",{'user':user,'c_frm':c_frm})
-
-
 
 def view_blog(request):
     user=request.session.get('dp')
@@ -170,14 +171,13 @@ def update_profile(request):
             recipient_list = [s_frm.cleaned_data.get('email')] 
             send_mail( subject, message, email_from, recipient_list ) 
             print("updated")
-            return redirect("/view_profile")
+            return redirect("/logout")
         else:
             print("not updated")
             print(s_frm.errors)
     else :
         s_frm=signupform()
     return render(request, "update_profile.html",{'s_data':signup.objects.get(id=u_id),'s_frm':s_frm})
-
 
 def elements(request):
        return render(request,"elements.html")

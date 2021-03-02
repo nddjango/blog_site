@@ -28,6 +28,7 @@
         
         .unm {
             font-size: 20px;
+            padding-left: 19px;
         }
         
         .title {
@@ -39,6 +40,8 @@
         
         .dscr {
             font-size: 20px;
+            padding: 10px;
+            font-family: 'Times New Roman', Times, serif;
         }
         
         .img {
@@ -51,6 +54,19 @@
         .tab {
             background-color: rgb(248, 245, 241);
             border-radius: 25px;
+        }
+        
+        .table_f {
+            background: white;
+            border-radius: 12px;
+            width: 600px;
+        }
+        
+        .unm_bg {
+            background: rgb(231, 227, 227);
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            font-size: 19px;
         }
     </style>
     <meta charset="utf-8">
@@ -114,7 +130,7 @@
     <div id="background-wrapper" class="benches" data-stellar-background-ratio="0.8">
 
         <!-- ======== @Region: #content ======== -->
-
+        <!-- 
         <div id="content">
             <div class="header">
                 <center>
@@ -122,9 +138,9 @@
                         <font size="6px" style="font-family: 'algerian'">✤ &nbsp;{{b_data.title}}</font>
                     </a>
                 </center>
-            </div>
+            </div> -->
 
-            <div class="row" style="width:1050px;">
+        <!-- <div class="row" style="width:1050px;">
                 <div class="col-sm-6 col-sm-offset-3">
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -142,11 +158,13 @@
                                                 <img src="{{b_data.image.url}}" class="img">
 
                                             </td>
-                                            <td>&nbsp; &nbsp; &nbsp; &nbsp;
-                                            </td>
+
+
+
+                                        </tr>
+                                        <tr>
                                             <td class="dscr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;✍&nbsp; {{b_data.dscr}}
                                             </td>
-
                                         </tr>
 
 
@@ -159,10 +177,48 @@
                     </div>
                 </div>
 
-            </div>
-
-        </div>
+            </div> -->
         <a href="/"> <i class="fa fa-home" style="color: rgb(241, 238, 238);font-size: 35px; padding: 10px"></i></a>
+        <center>
+            <a href="/">
+                <font size="6px" style="font-family: 'algerian'">✤ &nbsp;{{b_data.title}}</font>
+
+            </a>
+        </center>
+
+        <center>
+            <table class="table_f">
+                <tr>
+                    <td class="unm_bg">
+                        <b class="unm">♦ &nbsp;{{b_data.unm}}</b>
+                        <m style="float: right; padding-right:18px; padding-top: 6px;">
+                            <b><i class="fa fa-thumbs-o-up"></i>0</b>&nbsp;
+                            <b><i class="fa fa-thumbs-o-down"></i>0</b>&nbsp;
+                            <b><i class="fa fa-commenting-o"></i>0</b>
+                        </m>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <center>
+                            <img src="{{b_data.image.url}}" class="img">
+                        </center>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td class="dscr">
+                        <center>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;✍&nbsp; {{b_data.dscr}}
+                        </center>
+                    </td>
+
+                </tr>
+            </table>
+            <br>
+            <br>
+        </center>
+    </div>
 
     </div>
 

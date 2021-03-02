@@ -1,4 +1,4 @@
- {% load static%}
+{% load account %} {% load socialaccount %} {% load static%}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -91,14 +91,14 @@
                                         <div class="form-group">
                                             <div class="input-group input-group-lg">
                                                 <span class="input-group-addon"><i class="fa fa-fw fa-envelope"></i></span>
-                                                <input type="text" name="email" class="form-control" data-rule="required" data-msg="Please write something for us" placeholder="Email">
+                                                <input type="text" name="email" class="form-control" data-rule="required" data-msg="Please write something for us" placeholder="Email" required>
                                                 <div class="validation"></div>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group input-group-lg">
                                                 <span class="input-group-addon"><i class="fa fa-fw fa-lock"></i></span>
-                                                <input type="password" class="form-control" placeholder="Password" name="password">
+                                                <input type="password" class="form-control" placeholder="Password" name="password" required>
                                                 <div class="validation"></div>
                                             </div>
                                         </div>
@@ -108,9 +108,9 @@
                                               <p class="m-b-0 m-t" style="font-size:15px">Not signed up? <a href="/register">&nbsp; SIGN UP HERE</a>.</p>
                                             </b>
                                         </center> <br> <b><center>-------------------------------------OR-------------------------------------</center></b>
-                                        <br> <a href="#" class="btn btn-lg btn-block" style="background-color: #E41B17; color: azure;">Login with Google</a>
+                                        <br> <a href="{% provider_login_url 'google' %}" class="btn btn-lg btn-block" style="background-color: #E41B17; color: azure;">Login with Google</a>
 
-                                        <a href="#" class="btn btn-lg btn-block" style="background-color:#1589FF; color: azure;">Login with Facebook</a>
+                                        <a href="{% provider_login_url 'facebook' %}" class="btn btn-lg btn-block" style="background-color:#1589FF; color: azure;">Login with Facebook</a>
                                     </fieldset>
                                 </div>
                         </div>
