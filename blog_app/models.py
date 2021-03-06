@@ -13,8 +13,8 @@ class signup(models.Model):
 class blog(models.Model):
     unm=models.CharField(max_length=50)
     image=models.ImageField(upload_to="images/")
-    title=models.CharField(max_length=50)
-    dscr=models.CharField(max_length=1000)
+    title=models.TextField()
+    dscr=models.TextField()
 
     def __str__(self):
         return self.unm

@@ -5,9 +5,9 @@
 <head>
     <style>
         .dp {
-            height: 200px;
-            width: 200px;
-            border-radius: 500px;
+            height: 220px;
+            width: 240px;
+            border-radius: 5000px;
         }
         
         .unm {
@@ -19,6 +19,21 @@
         .email {
             font-size: 24px;
             font-weight: bold;
+        }
+        
+        .table1 {
+            background-color: white;
+            border-radius: 14px;
+        }
+        
+        .title {
+            background-color: rgb(67, 73, 73);
+            font-size: 16px;
+            font-weight: bold;
+            height: 40px;
+            border-top-left-radius: 14px;
+            border-top-right-radius: 14px;
+            color: coral;
         }
     </style>
     <meta charset="utf-8">
@@ -59,6 +74,7 @@
     <link href="{% static 'lib/owlcarousel/owl.theme.min.css'%}" rel="stylesheet">
     <link href="{% static 'lib/owlcarousel/owl.transitions.min.css'%}" rel="stylesheet">
 
+
     <!-- Main Stylesheet File -->
     <link href="{% static 'css/style.css'%}" rel="stylesheet">
 
@@ -81,50 +97,44 @@
 
         <!-- ======== @Region: #content ======== -->
         <div id="content">
+            <center>
 
-            <div class="row" style="width:1250px;">
-                <div class="col-sm-6 col-sm-offset-3">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">
-                                <b> Your Profile</b>
-                            </h3>
-                        </div>
-                        <div class="panel-body">
-                            <table width="100%">
-                                <tr>
-                                    <td>
-                                        <img src=" {{s_data.dp.url}}" style="padding-right:3%; " class=" dp ">
-                                    </td>
-                                    <td></td>
-                                    <td>
-                                        <table height="100% " width="100% ">
-                                            <tr>
-                                                <td class="unm "><i class="fa fa-user " style="color:rgb(255, 81, 0); "></i> &nbsp; {{s_data.unm}}</td>
-                                            </tr>
-                                            <tr>
-                                                <td><br></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="email "> <i class="fa fa-envelope " style="color:rgb(255, 81, 0); "></i> &nbsp;{{s_data.email}}</td>
-                                            </tr>
-                                            <tr>
-                                                <td><br></td>
-                                            </tr>
+                <table class="table1">
+                    <tr>
+                        <td class="title">&nbsp;&nbsp;YOUR PROFILE</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center><br>
+                                <img src=" {{s_data.dp.url}}" class=" dp "></center>
+                        </td>
+                        <td></td>
+                    </tr>
 
-                                        </table>
-                                    </td>
-                                </tr>
 
-                            </table>
-                            <b>
-                                <p class="m-b-0 m-t" style="font-size:17px; text-align: right;"> <a
-                                        href="/update_profile">&nbsp; UPADATE YOUR PROFILE?</a></p>
-                            </b>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    <tr>
+
+                        <td class="unm "><br> &nbsp; <i class="fa fa-user " style="color:rgb(255, 81, 0); "></i> &nbsp; {{s_data.unm}}</td>
+                    </tr>
+                    </tr>
+
+                    <tr>
+                        <td class="email "> &nbsp; <i class="fa fa-envelope " style="color:rgb(255, 81, 0); "></i> &nbsp;{{s_data.email}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+
+                        <tr>
+                            <td><br></td>
+                        </tr>
+
+                        <tr>
+                            <td> <b>
+        <p class="m-b-0 m-t" style="font-size:17px; text-align: right;"> <a
+                href="/update_profile">&nbsp; UPADATE YOUR PROFILE ?&nbsp;&nbsp;&nbsp;</a></p>
+    </b></td>
+                        </tr>
+
+                </table>
+            </center>
+
             <!-- /row -->
 
         </div>

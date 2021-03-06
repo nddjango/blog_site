@@ -5,10 +5,15 @@ from blog_for_thinker import settings
 from django.core.mail import send_mail 
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.sessions.models import Session
+# import required module 
+import requests 
+import json
 
 # Create your views here.
 def index(request):
     user=request.session.get('dp')
+    usernm=request.session.get('unm')
+
     blog_data=blog.objects.all()
 
     if request.method == 'POST':
@@ -23,18 +28,56 @@ def index(request):
     else:
         print("method is not post")
         c_frm=contactform()
-    return render(request,"index.html",{'user':user,'c_frm':c_frm,'blog_data':blog_data})
+    return render(request,"index.html",{'user':user,'c_frm':c_frm,'blog_data':blog_data,'usernm':usernm})
 
 def register(request):
     if request.method =='POST':
         s_frm=signupform(request.POST,request.FILES)
         if s_frm.is_valid():
             s_frm.save()
-            subject = 'Blog For thinker'
-            message = f'Hi {s_frm.cleaned_data.get("unm")}, thank you for registering in our site "Blog for thinkers" Welcome to our site user! Enjoy our services.......'
-            email_from = settings.EMAIL_HOST_USER 
-            recipient_list = [s_frm.cleaned_data.get('email')] 
-            send_mail( subject, message, email_from, recipient_list ) 
+
+
+
+            #---------------send mail----------------------
+            # subject = 'Blog For thinker'
+            # message = f'Hi {s_frm.cleaned_data.get("unm")}, thank you for registering in our site "Blog for thinkers" Welcome to our site user! Enjoy our services.......'
+            # email_from = settings.EMAIL_HOST_USER 
+            # recipient_list = [s_frm.cleaned_data.get('email')] 
+            # send_mail( subject, message, email_from, recipient_list ) 
+            
+            
+            
+           #----------------send message--------------------- 
+            url = "https://www.fast2sms.com/dev/bulk"
+            # create a dictionary 
+            my_data = { 
+                # Your default Sender ID 
+                'sender_id': 'FSTSMS',  
+                # Put your message here! 
+                'message': 'This is a test message',  
+                'language': 'english', 
+                'route': 'p', 
+                # You can send sms to multiple numbers 
+                # separated by comma. 
+                'numbers': ''    
+            } 
+            # create a dictionary 
+            headers = { 
+                'authorization': 'SJzFa2A0YtUNPxpCkrTXcsEI6hoLl18Kf5nbZRQg4yDOd7vVj9b9nZVWxtq4Xp6Y58kuyUEo1B3SwAFr', 
+                'Content-Type': "application/x-www-form-urlencoded", 
+                'Cache-Control': "no-cache"
+            }
+            response = requests.request("POST", 
+                            url, 
+                            data = my_data, 
+                            headers = headers) 
+            # load json data from source 
+            returned_msg = json.loads(response.text) 
+            # print the send message 
+            print(returned_msg['message'])
+
+
+
             return redirect("/")
         else:
             print(s_frm.errors)
@@ -184,3 +227,18 @@ def elements(request):
     
 def view_p_blog(request,id):
     return render(request,"view_p_blog.html",{'b_data':blog.objects.get(id=id)})
+
+def your_blog(request):
+    usernm=request.session.get('unm')
+    user=request.session.get('dp')
+    return render(request,"your_blog.html",{'blog_data':blog.objects.filter(unm=usernm),'user':user})
+
+def b_del(request,id):
+    bid=blog.objects.get(id=id)
+    bid.delete()    
+    return redirect('/your_blog')
+
+def b_edit(request,id):
+    user=request.session.get('unm')
+    return render(request,"b_edit.html",{'user':user,'b_data':blog.objects.get(id=id)})
+
