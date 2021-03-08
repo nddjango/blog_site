@@ -240,5 +240,17 @@ def b_del(request,id):
 
 def b_edit(request,id):
     user=request.session.get('unm')
-    return render(request,"b_edit.html",{'user':user,'b_data':blog.objects.get(id=id)})
+    if request.method == 'POST':
+        myfrm=blogform(request.POST)
+        id=blog.objects.get(id=id)
+        if myfrm.is_valid:
+            myfrm=blogform(request.POST,instance=id)
+            myfrm.save()
+            return redirect('/your_blog')
+            print("updated")
+        else:
+            print(myfrm.errors)
+    else:
+        myfrm=blogform()
+    return render(request,"b_edit.html",{'user':user,'b_data':blog.objects.get(id=id),'myfrm':myfrm})
 
